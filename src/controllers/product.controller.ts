@@ -1,19 +1,19 @@
 import { Request, Response, NextFunction } from "express";
 import {
-  addContact,
-  deleteContact,
-  getAllContacts,
-  updateContact,
-} from "../services/contact.service";
+  addProduct,
+  deleteProduct,
+  getAllProducts,
+  updateProduct,
+} from "../services/product.service";
 
 const Delete = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { id } = req.params;
-    await deleteContact(id);
+    await deleteProduct(id);
     res.json({
       success: true,
-      message: "Contact deleted successfully",
-      contactId: id,
+      message: "Product deleted successfully",
+      ProductId: id,
     });
   } catch (err) {
     next(err);
@@ -22,10 +22,10 @@ const Delete = async (req: Request, res: Response, next: NextFunction) => {
 
 const GetAll = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const contacts = await getAllContacts(req.businessId ?? "");
+    const products = await getAllProducts(req.businessId ?? "");
     res.json({
       success: true,
-      contacts: contacts,
+      products: products,
     });
   } catch (err) {
     next(err);
@@ -35,13 +35,13 @@ const GetAll = async (req: Request, res: Response, next: NextFunction) => {
 const Update = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { id } = req.params;
-    const updatedContact = await updateContact(id, req.body);
+    const updatedProduct = await updateProduct(id, req.body);
 
     res.json({
       success: true,
-      message: "Contact updated successfully.",
-      contact: {
-        updatedContact,
+      message: "Product updated successfully.",
+      Product: {
+        updatedProduct,
       },
     });
   } catch (err) {
@@ -51,14 +51,13 @@ const Update = async (req: Request, res: Response, next: NextFunction) => {
 
 const Add = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const newContact = await addContact(req.body);
+    const newProduct = await addProduct(req.body);
 
     res.status(201).json({
       success: true,
-      message: "Contact added successfully.",
-      id: newContact._id,
-      email: newContact.email,
-      name: newContact.name,
+      message: "Product added successfully.",
+      id: newProduct._id,
+      name: newProduct.name,
     });
   } catch (err) {
     next(err);

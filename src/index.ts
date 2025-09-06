@@ -5,6 +5,7 @@ import { contactRouter } from "./routers/contact.router";
 import { globalErrorHandler } from "./middlewares/errorhandling.middleware";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
+import { productRouter } from "./routers/product.router";
 
 env.config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/auth", authRouter);
 app.use("/contacts", contactRouter);
+app.use("/products", productRouter);
 app.use(globalErrorHandler);
 
 app.get("/", (_, res) => {
