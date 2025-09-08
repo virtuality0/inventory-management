@@ -63,9 +63,15 @@ const addProduct = async (addProductDto: addProductDto) => {
   return newProduct;
 };
 
-const getAllProducts = async (businessId: string) => {
+const getAllProducts = async (
+  businessId: string,
+  name: string,
+  category: string,
+) => {
   const products = await Product.find({
     businessId: businessId,
+    name: { $regex: name, $options: "i" },
+    catetory: { $regex: category, $options: "i" },
   })
     .select({
       _id: 1,

@@ -21,8 +21,10 @@ const Delete = async (req: Request, res: Response, next: NextFunction) => {
 };
 
 const GetAll = async (req: Request, res: Response, next: NextFunction) => {
+  const name = req.query.name as string;
+  const category = req.query.category as string;
   try {
-    const products = await getAllProducts(req.businessId ?? "");
+    const products = await getAllProducts(req.businessId ?? "", name, category);
     res.json({
       success: true,
       products: products,

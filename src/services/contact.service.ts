@@ -62,9 +62,10 @@ const addContact = async (addContactDto: addContactDto) => {
   return newContact;
 };
 
-const getAllContacts = async (businessId: string) => {
+const getAllContacts = async (businessId: string, search: string) => {
   const contacts = await Contact.find({
     businessId: businessId,
+    name: { $regex: search, $options: "i" },
   })
     .select({
       _id: 1,

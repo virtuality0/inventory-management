@@ -6,6 +6,8 @@ import { globalErrorHandler } from "./middlewares/errorhandling.middleware";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import { productRouter } from "./routers/product.router";
+import { transactionRouter } from "./routers/transactions.router";
+import { reportRouter } from "./routers/report.router";
 
 env.config();
 
@@ -16,6 +18,8 @@ app.use(cookieParser());
 app.use("/auth", authRouter);
 app.use("/contacts", contactRouter);
 app.use("/products", productRouter);
+app.use("/transactions", transactionRouter);
+app.use("/reports", reportRouter);
 app.use(globalErrorHandler);
 
 app.get("/", (_, res) => {

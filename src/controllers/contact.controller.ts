@@ -21,8 +21,9 @@ const Delete = async (req: Request, res: Response, next: NextFunction) => {
 };
 
 const GetAll = async (req: Request, res: Response, next: NextFunction) => {
+  const search = req.query.search as string;
   try {
-    const contacts = await getAllContacts(req.businessId ?? "");
+    const contacts = await getAllContacts(req.businessId ?? "", search);
     res.json({
       success: true,
       contacts: contacts,

@@ -1,0 +1,1480 @@
+{
+	"info": {
+		"_postman_id": "ef89856d-d77f-4703-a703-7a2f843a8f35",
+		"name": "Inventory-management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43068754"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"ayu\", \n    \"email\" : \"ayush@gmail.com\",\n    \"password\" : \"Ayush@123\",\n    \"businessId\": \"abc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"ayu\", \n    \"email\" : \"ayush@gmail.com\",\n    \"password\" : \"Ayush@123\",\n    \"businessId\": \"abc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/auth/register",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7c-L0onNH3YzHgRRbSxIKUVp/Kchrs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 05:57:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User registered successfully\",\n    \"user\": {\n        \"id\": \"68bbcd6485adeb2873b34aa9\",\n        \"email\": \"ayush@gmail.com\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"ayush@gmail.com\",\n    \"password\" : \"Ayush@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"ayush@gmail.com\",\n    \"password\" : \"Ayush@123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/auth/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmJjZDY0ODVhZGViMjg3M2IzNGFhOSIsImVtYWlsIjoiYXl1c2hAZ21haWwuY29tIiwiaWF0IjoxNzU3MTM4MzA2fQ.5pXqJEXrChWrUZ7eR0s09cyQLBV_pYOK-6GeD34BAiw; Max-Age=86400; Path=/; Expires=Sun, 07 Sep 2025 05:58:26 GMT; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "246"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f6-CaMlGs0RpFa/pfdtQqtzuFoiO7U\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 05:58:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User signin successfull\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmJjZDY0ODVhZGViMjg3M2IzNGFhOSIsImVtYWlsIjoiYXl1c2hAZ21haWwuY29tIiwiaWF0IjoxNzU3MTM4MzA2fQ.5pXqJEXrChWrUZ7eR0s09cyQLBV_pYOK-6GeD34BAiw\"\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"ayush@gmail.com\",\n    \"password\" : \"Ayush@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/logout",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/contacts?search=den",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"contacts"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "den"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get-all-users-success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/user",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "156"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9c-lS4vGkf3V46fi8sMmvVFujVO4FU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 17:40:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"users\": [\n        {\n            \"id\": \"cmf3w4krn0000s46tduizlcng\",\n            \"name\": null,\n            \"username\": \"ayu\",\n            \"email\": \"ayush@gmail.com\",\n            \"avatar\": null,\n            \"bio\": null\n        }\n    ],\n    \"totalUsers\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Varun\", \n    \"email\" : \"varun@gmail.com\",\n    \"password\" : \"Ayush@123\",\n    \"businessId\": \"abc\", \n    \"type\" : \"Vendor\", \n    \"address\" :\"New Delhi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/contacts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "conflict",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Rahul\", \n    \"email\" : \"rahul@gmail.com\",\n    \"password\" : \"Ayush@123\",\n    \"businessId\": \"abc\", \n    \"type\" : \"Customer\", \n    \"address\" :\"New Delhi\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/contacts",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"contacts"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-70NYh3QzBjXz6BppOf6/4xb5Uv0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 06:46:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Contact with this email already exists.\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Varun\", \n    \"email\" : \"varun@gmail.com\",\n    \"password\" : \"Ayush@123\",\n    \"businessId\": \"abc\", \n    \"type\" : \"Vendor\", \n    \"address\" :\"New Delhi\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/contacts",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"contacts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "129"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"81-3/dsoi1XHUkKS+4x4fCVmwKxH78\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 07:27:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Contact added successfully.\",\n    \"id\": \"68bbe26d3dce2dd49527e487\",\n    \"email\": \"varun@gmail.com\",\n    \"name\": \"Varun\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/contacts/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"contacts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "68bbe26d3dce2dd49527e487"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/contacts/:id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"contacts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "68bbdd5c519f9ff7cc413157"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"60-LIShckFrd0ChpWicS92m4GC1Cmg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 07:24:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Contact deleted successfully\",\n    \"contactId\": \"68bbdd5c519f9ff7cc413157\"\n}"
+						},
+						{
+							"name": "id-not-found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/contacts/:id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"contacts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "68bbdd5c519f9ff7cc413157"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-PFMBjOrCsFxLnlYnyQBMI2R5N2I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 07:26:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"No contact with id : 68bbdd5c519f9ff7cc413157 found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Denji\", \n    \"email\" : \"Denji@gmail.com\",\n    \"password\" : \"Ayush@123\",\n    \"businessId\": \"abc\", \n    \"type\" : \"Vendor\", \n    \"address\" :\"Japan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/contacts/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"contacts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "68bbe4c37df396f432d7a044"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "id-not-found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"tenma\", \n    \"email\" : \"tenma@gmail.com\",\n    \"password\" : \"Ayush@123\",\n    \"businessId\": \"abc\", \n    \"type\" : \"Vendor\", \n    \"address\" :\"Japan\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/contacts/:id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"contacts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "68bbdd5c519f9ff7cc413157"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-PFMBjOrCsFxLnlYnyQBMI2R5N2I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 07:27:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"No contact with id : 68bbdd5c519f9ff7cc413157 found.\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Denji\", \n    \"email\" : \"Denji@gmail.com\",\n    \"password\" : \"Ayush@123\",\n    \"businessId\": \"abc\", \n    \"type\" : \"Vendor\", \n    \"address\" :\"Japan\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/contacts/:id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"contacts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "68bbe4c37df396f432d7a044"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "216"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d8-4MBytAPOJk8E9LmzOlybtSczx+w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 07:38:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Contact updated successfully.\",\n    \"contact\": {\n        \"updatedContact\": {\n            \"_id\": \"68bbe4c37df396f432d7a044\",\n            \"name\": \"Denji\",\n            \"email\": \"Denji@gmail.com\",\n            \"address\": \"Japan\",\n            \"type\": \"Vendor\",\n            \"businessId\": \"abc\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products?name=&category=sta",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "category",
+									"value": "sta"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/products",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "299"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12b-9Yw7fg5j4sX6dadom7ZVBZyiWRs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 08:31:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"products\": [\n        {\n            \"_id\": \"68bbf0ef99c4d7e4d630474b\",\n            \"name\": \"Notebook\",\n            \"description\": \"A4 notebooks\",\n            \"price\": 90,\n            \"stock\": 0,\n            \"catetory\": \"Stationery\",\n            \"businessId\": \"abc\"\n        },\n        {\n            \"_id\": \"68bbf14934344fe4f2980d59\",\n            \"name\": \"Samsumg S23\",\n            \"price\": 84000,\n            \"stock\": 0,\n            \"catetory\": \"Electronics\",\n            \"businessId\": \"abc\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Samsumg S23\", \n    \"price\" : 84000,\n    \"businessId\": \"abc\", \n    \"category\" : \"Electronics\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/products",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Notebook\", \n    \"description\" : \"A4 notebooks\",\n    \"price\" : 90,\n    \"businessId\": \"abc\", \n    \"category\" : \"Stationery\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/products",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "106"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6a-MmAjBgMKdpzaYbtdtxMrEDESFb8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 08:29:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Product added successfully.\",\n    \"id\": \"68bbf0ef99c4d7e4d630474b\",\n    \"name\": \"Notebook\"\n}"
+						},
+						{
+							"name": "conflict",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Notebook\", \n    \"description\" : \"A4 notebooks\",\n    \"price\" : 90,\n    \"businessId\": \"abc\", \n    \"category\" : \"Stationery\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/products",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-Xk0QzVDgbiMC+wSUM8ZwFlawu8o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 08:30:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Product with this name already exists.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "68bbf0ef99c4d7e4d630474b"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/products/:id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "68bbf0ef99c4d7e4d630474b"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"60-rOG2lEjI/XD6tobio9PHgi0lqKE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 08:38:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Product deleted successfully\",\n    \"ProductId\": \"68bbf0ef99c4d7e4d630474b\"\n}"
+						},
+						{
+							"name": "product-not-found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/products/:id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "68bbf0ef99c4d7e4d630474b"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-hMP2uHKcPjN4ZUd4UkOX8/OVgyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 08:38:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"No product with id : 68bbf0ef99c4d7e4d630474b found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Notebook\", \n    \"businessId\": \"abc\", \n    \"price\" : 80\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/products/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "68bbf0ef99c4d7e4d630474b"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Notebook\", \n    \"businessId\": \"abc\", \n    \"price\" : 80\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/products/:id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "68bbf0ef99c4d7e4d630474b"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "209"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d1-fpiMmapZlmDgFLw2FkmnNk9P4pI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Sep 2025 08:37:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Product updated successfully.\",\n    \"Product\": {\n        \"updatedProduct\": {\n            \"_id\": \"68bbf0ef99c4d7e4d630474b\",\n            \"name\": \"Notebook\",\n            \"description\": \"A4 notebooks\",\n            \"price\": 80,\n            \"stock\": 0,\n            \"businessId\": \"abc\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/transactions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/transactions",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "638"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27e-qIxds32EXgsYzb6A/+jRGoScILM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Sep 2025 17:27:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"transaction\": [\n        {\n            \"_id\": \"68bdbfd725e3f9217c099de4\",\n            \"type\": \"Purchase\",\n            \"vendorId\": \"68bbe4c37df396f432d7a044\",\n            \"products\": [\n                {\n                    \"product\": {\n                        \"_id\": \"68bd9affb230af43645c6209\",\n                        \"name\": \"Notebook\",\n                        \"price\": 70,\n                        \"stock\": 3,\n                        \"catetory\": \"Stationery\",\n                        \"businessId\": \"abc\",\n                        \"createdAt\": \"2025-09-07T14:47:27.765Z\",\n                        \"updatedAt\": \"2025-09-07T17:24:39.654Z\",\n                        \"__v\": 0\n                    },\n                    \"quantity\": 2\n                },\n                {\n                    \"product\": {\n                        \"_id\": \"68bbf14934344fe4f2980d59\",\n                        \"name\": \"Samsumg S23\",\n                        \"price\": 84000,\n                        \"stock\": 2,\n                        \"catetory\": \"Electronics\",\n                        \"businessId\": \"abc\",\n                        \"createdAt\": \"2025-09-06T08:31:05.370Z\",\n                        \"updatedAt\": \"2025-09-07T17:24:39.654Z\",\n                        \"__v\": 0\n                    },\n                    \"quantity\": 1\n                }\n            ],\n            \"totalAmount\": 84140,\n            \"businessId\": \"abc\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\" : \"Purchase\", \n    \"vendorId\" : \"68bbe4c37df396f432d7a044\", \n    \"products\" : [\n        {\n            \"product\" : \"68bd9affb230af43645c6209\", \n            \"quantity\" : 2\n        },\n        {\n            \"product\" : \"68bbf14934344fe4f2980d59\", \n            \"quantity\" : 1\n        }\n    ], \n    \"businessId\" : \"abc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/transactions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\" : \"Purchase\", \n    \n    \"vendorId\" : \"68bbe4c37df396f432d7a044\", \n    \"products\" : [\n        {\n            \"product\" : \"68bd9affb230af43645c6209\", \n            \"quantity\" : 2\n        },\n        {\n            \"product\" : \"68bbf14934344fe4f2980d59\", \n            \"quantity\" : 1\n        }\n    ], \n    \"totalAmount\" : 160, \n    \"businessId\" : \"abc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/transactions",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "92"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c-MYDrZtR0OHqbpjwKjpcKRuCaarE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Sep 2025 14:49:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Transaction added successfully.\",\n    \"id\": \"68bd9b95b230af43645c620d\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "GetInventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/reports/inventory",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"reports",
+								"inventory"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/reports/inventory",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"reports",
+										"inventory"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b8-DL7P1dKIMtpJLWzhJ6qF5Ketync\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Sep 2025 08:15:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"inventory\": [\n        {\n            \"_id\": \"68bbf14934344fe4f2980d59\",\n            \"name\": \"Samsumg S23\",\n            \"price\": 84000,\n            \"stock\": 2\n        },\n        {\n            \"_id\": \"68bd9affb230af43645c6209\",\n            \"name\": \"Notebook\",\n            \"price\": 70,\n            \"stock\": 3\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
